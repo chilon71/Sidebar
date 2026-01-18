@@ -5,17 +5,22 @@ import {
   SheetTitle,
 } from "@/components/common/Sheet";
 import { useHistoryInput } from "@/hook/useHistoryInput";
-import { useState } from "react";
+import React, { useState, useCallback } from "react";
 import aiIcon from "/assets/img/AI.svg";
 import { Button } from "@/components/ui/Button";
 import { CardWithBackground, CardGenerateBackground } from "../Card";
 import backgroundData from "@/features/backgroundSelector/mock/background-data.json";
 import PromptInput from "@/components/common/PromtInput";
 
-export default function BackgroundSelectorSidebar() {
+const BackgroundSelectorSidebar = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const { inputValue, setHistoryValue, undo, redo, canUndo, canRedo } =
     useHistoryInput("");
+
+  const handleSelect = useCallback((id: number) => {
+    setSelectedId(id);
+  }, []);
+
   return (
     <SheetContent className="py-8 gap-6 w-full md:w-100 sm:max-w-none">
       <SheetHeader className="p-0 px-5">
@@ -50,7 +55,7 @@ export default function BackgroundSelectorSidebar() {
                 {...idea}
                 key={idea.id}
                 selected={selectedId === idea.id}
-                onSelect={() => setSelectedId(idea.id)}
+                onSelect={handleSelect}
               />
             ))}
           </div>
@@ -59,4 +64,6 @@ export default function BackgroundSelectorSidebar() {
       </ScrollArea>
     </SheetContent>
   );
-}
+};
+
+export default React.memo(BackgroundSelectorSidebar);

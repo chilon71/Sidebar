@@ -1,8 +1,9 @@
 import { useCallback, useState } from "react";
+import type { UseHistoryInputReturn } from "./types";
 
-export function useHistoryInput(initialValue = "") {
+export function useHistoryInput(initialValue = ""): UseHistoryInputReturn {
   const [history, setHistory] = useState<string[]>([initialValue]);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState<number>(0);
 
   const value = history[index];
 

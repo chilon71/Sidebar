@@ -1,16 +1,17 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import CardWrapper from "../../../../components/common/Card";
-import type { CardGenerateBackgroundProps } from "./types";
+import { memo } from "react";
+import type { CardWithBackgroundProps } from "./types";
 
-export default function CardWithBackground({
+const CardWithBackground = ({
   id,
   backgroundImg,
   avatarImg,
   badge,
   selected,
   onSelect,
-}: CardGenerateBackgroundProps) {
+}: CardWithBackgroundProps) => {
   const handleClick = () => {
     onSelect?.(id);
   };
@@ -57,4 +58,6 @@ export default function CardWithBackground({
       </Badge>
     </CardWrapper>
   );
-}
+};
+
+export default memo(CardWithBackground);

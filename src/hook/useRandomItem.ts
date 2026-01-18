@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
+import type { UseRandomItemReturn } from "./types";
 
-export function useRandomItem(items: string[]) {
+export function useRandomItem(items: string[]):UseRandomItemReturn {
   const [item, setItem] = useState<string>(() => {
     return items[Math.floor(Math.random() * items.length)];
   });
