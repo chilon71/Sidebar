@@ -1,0 +1,33 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "badge": "Default",
+      "backgroundImg": "/assets/img/api/bg-default.png"
+    },
+    {
+      "id": 2,
+      "badge": "Room",
+      "avatarImg": "/assets/img/api/avatar.png",
+      "backgroundImg": "/assets/img/api/bg-room.png"
+    },
+    {
+      "id": 3,
+      "badge": "Street",
+      "avatarImg": "/assets/img/api/avatar.png",
+      "backgroundImg": "/assets/img/api/bg-street.png"
+    },
+    {
+      "id": 4,
+      "badge": "Stairs",
+      "avatarImg": "/assets/img/api/avatar.png",
+      "backgroundImg": "/assets/img/api/bg-stairs.png"
+    },
+    {
+      "id": 5,
+      "badge": "Court",
+      "avatarImg": "/assets/img/api/avatar.png",
+      "backgroundImg": "/assets/img/api/bg-court.png"
+    }
+  ]
+}
